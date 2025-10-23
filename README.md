@@ -9,23 +9,19 @@
 - - TO BE INSTALLED:
 `npm install`
 `npm install react-router-dom`
-<!-- 
-/** 
-@type {import('tailwindcss').Config} */
-  export default {`
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
 
-
-  Add this to tailwind.config.js file.
-} -->
-
+- - Add this to tailwind.config.js file:
+`@type {import('tailwindcss').Config} */`
+  `export default {`
+  `content: [`
+    `"./index.html",`
+    `"./src/**/*.{js,ts,jsx,tsx}",`
+  `],`
+  `theme: {`
+    `extend: {},`
+  `},`
+  `plugins: [],`
+`} `
 `@tailwind base;`
 `@tailwind components;`
 `@tailwind utilities;`  in the `index.css`.
