@@ -25,7 +25,7 @@ const Front = () => {
         setImages(newImages);
     };
 
-    // --- Add Image Logic ---
+    // --- Add Image: ---
     const handleAddImage = (event) => {
         const file = event.target.files[0];
         if (file && file.type.startsWith('image/')) {
@@ -47,13 +47,12 @@ const Front = () => {
             style={{ backgroundColor: "oklch(0.27 0 0)" }}
             className='flex h-screen font-sans'
         >
-            {/* Custom Message Box */}
             <div
                 id="gallery-message"
                 className="fixed top-5 left-1/2 transform -translate-x-1/2 p-3 bg-blue-500 text-white rounded-lg shadow-xl z-50 transition-all duration-300 opacity-0 scale-90"
             ></div>
 
-            {/* Left Side Dummy Box */}
+            {/* Left Side: */}
             <div className='w-full sm:w-[90%] md:w-[100%] lg:w-[100%] xl:w-[90%] 2xl:w-[100%]'>
                 <div
                     className='border border-blue-300 m-9 h-[90%] rounded-[30px] flex items-center justify-center'
@@ -65,10 +64,10 @@ const Front = () => {
                 </div>
             </div>
 
-            {/* Right Side - Main Content */}
+            {/* Right Side: */}
             <div className='text-white w-full lg:w-[100%] flex flex-col h-full overflow-y-auto scrollbar scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent'>
 
-                {/* Top Section */}
+                {/* Top Section: */}
                 <div
                     style={{ backgroundColor: "oklch(37.3% 0.034 259.733)" }}
                     className='shadow-[5px_5px_5px_black] m-4 sm:m-9 rounded-[30px] flex flex-col lg:h-[50%] pb-6'
@@ -80,7 +79,6 @@ const Front = () => {
                     />
 
                     <div className='shadow-[3px_10px_15px_theme(colors.gray.600)] flex flex-col h-[120px] mb-4 lg:flex-row md:h-[100px] lg:h-[20%] w-[90%] sm:w-[85%] mx-auto mt-1 items-center justify-center lg:justify-around bg-black rounded-[20px] p-2'>
-                        {/* About Me Button */}
                         <button
                             onClick={() => setActive('about')}
                             className={active === 'about'
@@ -89,8 +87,6 @@ const Front = () => {
                         >
                             About Me
                         </button>
-
-                        {/* Experiences Button */}
                         <button
                             onClick={() => setActive('exp')}
                             className={active === 'exp'
@@ -99,8 +95,6 @@ const Front = () => {
                         >
                             Experiences
                         </button>
-
-                        {/* Recommended Button */}
                         <button
                             onClick={() => setActive('rec')}
                             className={active === 'rec'
@@ -117,18 +111,15 @@ const Front = () => {
                     </div>
                 </div>
 
-                {/* Divider */}
                 <hr style={{ width: "80%", marginLeft: "11%" }} />
 
-                {/* Bottom Section - Image Gallery */}
+                {/* Bottom Part: */}
                 <div style={{ backgroundColor: "oklch(37.3% 0.034 259.733)" }} className='shadow-[5px_5px_5px_black] m-4 sm:m-9 mt-4 rounded-[30px] flex flex-col pb-6'>
                     <img
                         className='hover:cursor-pointer mt-4 ml-4 w-6 h-6 object-contain'
                         src={assets.help}
                         alt=''
                     />
-
-                    {/* Hidden File Input */}
                     <input
                         type="file"
                         accept="image/*"
@@ -139,21 +130,15 @@ const Front = () => {
 
                     <div className='flex flex-col lg:flex-row flex-wrap items-center justify-start gap-4 mt-5 px-6'>
 
-                        {/* GALLERY Label */}
                         <span className='shadow-[1px_1px_20px_theme(colors.gray.900)] rounded-[20px] font-semibold text-[20px] py-2 text-center w-full sm:w-auto px-6 inline-block bg-black hover:cursor-default'>
                             GALLERY
                         </span>
-
-                        {/* + ADD IMAGE Button */}
                         <span
                             style={{ backgroundColor: "oklch(55.4% 0.046 257.417)" }}
                             className='ml-0 sm:ml-[10%] lg:ml-[25%] border border-gray-300 shadow-[3px_8px_15px_black] rounded-[40px] font-semibold text-[20px] py-2 text-center w-full sm:w-auto px-6 inline-block hover:cursor-pointer hover:bg-gray-900 transition-colors duration-300'
                             onClick={() => fileInputRef.current.click()}
                         >+ ADD IMAGE</span>
-
-                        {/* Arrow Buttons */}
                         <div className='flex space-x-2 mt-4 sm:mt-0 lg:ml-auto'>
-                            {/* Left Arrow */}
                             <span
                                 onClick={() => {
                                     const container = document.getElementById('gallery-container');
@@ -162,8 +147,6 @@ const Front = () => {
                                 style={{ backgroundColor: "oklch(20% 0 0)" }}
                                 className={`shadow-[1px_2px_30px_black] border border-gray-300 rounded-full text-center h-8 w-8 flex items-center justify-center hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300 ${galleryIsEmpty ? 'opacity-50 cursor-not-allowed' : ''}`}
                             >←</span>
-
-                            {/* Right Arrow */}
                             <span
                                 onClick={() => {
                                     const container = document.getElementById('gallery-container');
@@ -175,7 +158,7 @@ const Front = () => {
                         </div>
                     </div>
 
-                    {/* --- HORIZONTAL SCROLLABLE IMAGE GALLERY --- */}
+                    {/* --- HORIZONTAL SCROLLABAR: --- */}
                     <div className='mt-6 mx-6 p-4 border border-dashed border-gray-500 rounded-lg bg-gray-800 h-full min-h-[150px]'>
                         {galleryIsEmpty ? (
                             <p className='text-gray-400 text-center py-8'>
